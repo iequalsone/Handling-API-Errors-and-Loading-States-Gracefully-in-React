@@ -1,50 +1,57 @@
-# React + TypeScript + Vite
+# Handling API Errors and Loading States Gracefully in React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **Handling API Errors and Loading States Gracefully in React** repository! This repository provides best practices for managing API errors and loading states in React applications. It demonstrates practical examples using **React Query**, **TypeScript**, and a well-organized **Vite application folder structure**.
 
-Currently, two official plugins are available:
+## 📖 Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Managing API errors and loading states is crucial for building robust, user-friendly applications. This repository focuses on:
 
-## Expanding the ESLint configuration
+- **Handling API errors gracefully** with user-friendly feedback.
+- **Managing loading states efficiently** to improve user experience.
+- **Integrating React Query** for server-state management.
+- **Utilizing TypeScript** for type safety and better developer experience.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## ✨ Features
 
-- Configure the top-level `parserOptions` property like this:
+- **Error Handling**: Centralized error handling for API calls.
+- **Loading States**: Strategies for displaying loading indicators effectively.
+- **Retry Mechanisms**: Demonstrates retrying failed API calls with React Query.
+- **User Feedback**: Includes UI patterns for error messages, retry buttons, and loading spinners.
+- **TypeScript First**: Fully typed API calls, hooks, and components.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📂 Project Structure
+```
+src/
+├── components/          # UI components
+│   ├── LoadingSpinner.tsx
+│   ├── ErrorMessage.tsx
+│   ├── ErrorBoundary.tsx
+│   └── UserProfile.tsx
+├── hooks/               # Custom hooks for API fetching and error handling
+│   ├── useFetchUser.ts
+│   ├── useFetchPosts.ts
+│   └── useHandleError.ts
+├── types/               # TypeScript types and interfaces
+│   └── apiTypes.ts
+├── app/                 # Application entry point
+│   └── main.tsx
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 🛠 Usage
+**User Profile Example**
+This example demonstrates fetching user profile data while handling errors and loading states.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **Hook**: `src/hooks/useFetchUser.ts`
+- **Component**: `src/components/UserProfile.tsx`
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 📝 License
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/iequalsone/Handling-API-Errors-and-Loading-States-Gracefully-in-React/blob/main/LICENSE) file for details.
+
+## 💬 Contributing
+Contributions are welcome! If you’d like to enhance these examples or add new use cases, feel free to:
+
+1. Fork the repository.
+2. Create a new feature branch.
+3. Submit a pull request with a detailed explanation of your changes.
+
+Thank you for exploring this repository! If you found this helpful, check out the accompanying LinkedIn article for more insights on error and loading state management in React. Happy coding! 🚀
